@@ -3,15 +3,17 @@
 #
 
 class SumFinder
+  attr_accessor :sum
+
   def initialize(number)
-    @number = number
-    
-    find_and_sum_multiples
+    @number = (number - 1)
+    @sum = nil
   end
 
   def find_and_sum_multiples
     multiples = find_multiples
-    sum_multiples(multiples)
+    value = sum_multiples(multiples)
+    @sum = value
   end
 
   def find_multiples
@@ -35,4 +37,8 @@ class SumFinder
   end
 end
 
-sum_finder.new(1000)
+sum_finder = SumFinder.new(1000)
+sum_finder.find_and_sum_multiples
+
+puts '--------'
+puts sum_finder.sum
