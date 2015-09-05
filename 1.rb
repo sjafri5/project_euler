@@ -31,5 +31,6 @@ class SumFinder
   end
 
   def sum_multiples(multiples)
+    multiples.reduce(:+)
   end
 end

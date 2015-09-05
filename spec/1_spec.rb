@@ -54,12 +54,29 @@ describe SumFinder do
       num = [3,6,9.12,15, 1113].sample 
       expect(@sum_finder.is_multiple_three?(num)).to eq true
     end
+
+    it 'returns false if not multiple of 3' do
+      num = [2, 25, 31, 32].sample 
+      expect(@sum_finder.is_multiple_three?(num)).to eq false
+    end
   end
 
   describe 'is_multiple_five?' do
     it 'returns true if multiple of 5' do
       num = [5,25,50,45,38985].sample 
       expect(@sum_finder.is_multiple_five?(num)).to eq true
+    end
+
+    it 'returns false if not multiple of 5' do
+      num = [1, 3, 4, 6, 8].sample 
+      expect(@sum_finder.is_multiple_five?(num)).to eq false
+    end
+  end
+
+  describe 'sum_multiples' do
+    it 'returns the sum of the array' do
+      num_array = [5,25,50,45]
+      expect(@sum_finder.sum_multiples(num_array)).to eq (5 + 25 + 50 + 45) 
     end
   end
 end 
