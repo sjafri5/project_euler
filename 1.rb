@@ -34,3 +34,5 @@ class SumFinder
     multiples.reduce(:+)
   end
 end
+
+sum_finder.new(1000)
