@@ -15,7 +15,17 @@ class SumFinder
   end
 
   def find_multiples
+    (1..@number).select { |num| is_multiple?(num) }
+  end
 
+  def is_multiple?(number)
+    is_multiple_three?(number) || is_multiple_five?(number)
+  end
+
+  def is_multiple_three?(number)
+  end
+
+  def is_multiple_five?(number)
   end
 
   def sum_multiples(multiples)
