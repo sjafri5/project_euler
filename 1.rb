@@ -23,9 +23,11 @@ class SumFinder
   end
 
   def is_multiple_three?(number)
+    (number % 3) == 0
   end
 
   def is_multiple_five?(number)
+    (number % 5) == 0
   end
 
   def sum_multiples(multiples)
