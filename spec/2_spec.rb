@@ -35,5 +35,17 @@ describe SumFinder do
     end
   end
 
-  describe
+  describe 'find_sum' do
+    it 'calls append_current_even_vals' do
+      expect_any_instance_of(FibSumFinder).to receive(:append_current_even_vals)
+      @sum_finder.find_sum
+    end
+
+    it 'calls append_current_even_vals' do
+      allow_any_instance_of(FibSumFinder).to receive(:append_current_even_vals)
+      expect_any_instance_of(FibSumFinder).to receive(:update_or_calculate_sum)
+      @sum_finder.find_sum
+    end
+
+  end
 end

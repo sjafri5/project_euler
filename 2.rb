@@ -17,10 +17,13 @@ class FibSumFinder
   end
 
   def find_sum
-    # calls method that check adds to array of even values
-    # calls method that updates first and second number
-    # calls method that checks if max number is hit
-    #
+    append_current_even_vals
+    update_or_calculate_sum
   end
 
+  def append_current_even_vals
+  end
+
+  def update_or_calculate_sum
+  end
 end
