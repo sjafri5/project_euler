@@ -76,4 +76,24 @@ describe SumFinder do
       expect(@sum_finder.is_even?).to eq false
     end
   end
+
+  describe 'update_or_calculate_sum' do
+    it 'calls at_maximum?' do
+      expect_any_instance_of(FibSumFinder).to receive(:at_maximum?)
+      allow_any_instance_of(FibSumFinder).to receive(:rinse_and_repeat)
+      @sum_finder.update_or_calculate_sum
+    end
+
+    it 'calls calculate_sum if true' do
+      allow_any_instance_of(FibSumFinder).to receive(:at_maximum?) { true }
+      expect_any_instance_of(FibSumFinder).to receive(:calculate_sum)
+      @sum_finder.update_or_calculate_sum
+    end
+
+    it 'calls rinse_and_repeat if false' do
+      allow_any_instance_of(FibSumFinder).to receive(:at_maximum?) { false }
+      expect_any_instance_of(FibSumFinder).to receive(:rinse_and_repeat)
+      @sum_finder.update_or_calculate_sum
+    end
+  end
 end

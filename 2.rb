@@ -32,5 +32,28 @@ class FibSumFinder
   end
 
   def update_or_calculate_sum
+    if at_maximum?
+      calculate_sum
+    else
+      rinse_and_repeat
+    end
+    # if at_maximum?
+    #   calculate_sum
+    # else
+    #   update_numbers
+    #   find_sum
+    # end
+    # check if max is hit
+    # if not update first and sec nums
+    # call find_sum
+  end
+
+  def at_maximum?
+  end
+
+  def calculate_sum
+  end
+
+  def rinse_and_repeat
   end
 end
