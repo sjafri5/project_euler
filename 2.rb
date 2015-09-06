@@ -28,6 +28,7 @@ class FibSumFinder
   end
 
   def is_even?
+    @second_num.even?
   end
 
   def update_or_calculate_sum

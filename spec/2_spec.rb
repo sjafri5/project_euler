@@ -63,4 +63,17 @@ describe SumFinder do
       expect(@sum_finder.even_numbers).to eq ['foo']
     end
   end
+
+  describe 'is_even?' do
+    it 'returns true if second_num even' do
+      @sum_finder.instance_variable_set(:@second_num, 2) 
+
+      expect(@sum_finder.is_even?).to eq true 
+    end
+
+    it 'returns false if second_num odd' do
+      @sum_finder.instance_variable_set(:@second_num, 3) 
+      expect(@sum_finder.is_even?).to eq false
+    end
+  end
 end
