@@ -9,6 +9,8 @@
 # of the even-valued terms.
 
 class FibSumFinder
+  attr_accessor :second_num, :even_numbers
+ 
   def initialize(number)
     @max_number = number
     @first_num = 1
@@ -22,6 +24,10 @@ class FibSumFinder
   end
 
   def append_current_even_vals
+    @even_numbers << @second_num if is_even?
+  end
+
+  def is_even?
   end
 
   def update_or_calculate_sum

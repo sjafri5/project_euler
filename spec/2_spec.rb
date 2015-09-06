@@ -46,6 +46,21 @@ describe SumFinder do
       expect_any_instance_of(FibSumFinder).to receive(:update_or_calculate_sum)
       @sum_finder.find_sum
     end
+  end
 
+  describe 'append_current_even_vals' do
+    it 'calls is_even?' do
+      expect_any_instance_of(FibSumFinder).to receive(:is_even?)
+      @sum_finder.append_current_even_vals
+    end
+
+    it 'appends @second_num to @even_numbers if true' do
+      @sum_finder.instance_variable_set(:@second_num, 'foo')
+      @sum_finder.instance_variable_set(:@even_numbers, [])
+      allow_any_instance_of(FibSumFinder).to receive(:is_even?) { true }
+      @sum_finder.append_current_even_vals
+
+      expect(@sum_finder.even_numbers).to eq ['foo']
+    end
   end
 end
