@@ -13,7 +13,14 @@ class FibSumFinder
     @max_number = number
     @first_num = 1
     @second_num = 2
+    @even_numbers = []
   end
 
-  def 
+  def find_sum
+    # calls method that check adds to array of even values
+    # calls method that updates first and second number
+    # calls method that checks if max number is hit
+    #
+  end
+
 end
